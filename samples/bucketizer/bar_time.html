@@ -2,12 +2,12 @@
 <html>
 
 <head>
-	<title>Line Chart</title>
-	<script src="../../../js/hammer.min.js"></script>
-	<script src="../../../js/moment.min.js"></script>
-	<script src="../../../js/Chart.bundle.min.js"></script>
-	<script src="../../../js/chartjs-plugin-zoom.min.js"></script>
-	<script src="../../../js/utils.js"></script>
+	<title>Bar Time</title>
+	<script src="../../js/hammer.min.js"></script>
+	<script src="../../js/moment.min.js"></script>
+	<script src="../../js/Chart.bundle.min.js"></script>
+	<script src="../../js/chartjs-plugin-zoom.min.js"></script>
+	<script src="../../js/utils.js"></script>
 	<style>
 		canvas {
 			-moz-user-select: none;
@@ -25,8 +25,8 @@
 	<br>
 	Chart Type:
 	<select id="type">
-		<option value="line">Line</option>
 		<option value="bar">Bar</option>
+		<option value="line">Line</option>
 	</select>
 	<button id="update">update</button>
 	<script>
@@ -67,7 +67,7 @@
 					backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
 					borderColor: window.chartColors.red,
 					data: data,
-					type: 'line',
+					type: 'bar',
 					pointRadius: 0,
 					fill: false,
 					lineTension: 0,

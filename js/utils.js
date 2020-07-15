@@ -1,6 +1,10 @@
 'use strict';
 
 window.chartColors = {
+	bacnet: 'rgb(60, 65,241)',
+	dnp3: 'rgb(90, 240, 20)',
+	modbus: 'rgb(244,140,6)',
+	profinet: 'rgb(241,249,3)',
 	red: 'rgb(255, 99, 132)',
 	orange: 'rgb(255, 159, 64)',
 	yellow: 'rgb(255, 205, 86)',

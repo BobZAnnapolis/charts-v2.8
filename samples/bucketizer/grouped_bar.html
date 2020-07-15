@@ -2,9 +2,12 @@
 <html>
 
 <head>
-	<title>Bar Chart</title>
-	<script src="../../../js/Chart.min.js"></script>
-	<script src="../../../js/utils.js"></script>
+	<title>Grouped Bar Chart</title>
+	<script src="../../js/hammer.min.js"></script>
+	<script src="../../js/moment.min.js"></script>
+	<script src="../../js/Chart.bundle.min.js"></script>
+	<script src="../../js/chartjs-plugin-zoom.min.js"></script>
+	<script src="../../js/utils.js"></script>
 	<style>
 	canvas {
 		-moz-user-select: none;
@@ -29,9 +32,9 @@
 		var barChartData = {
 			labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
 			datasets: [{
-				label: 'Dataset 1',
-				backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
-				borderColor: window.chartColors.red,
+				label: 'BACNET',
+				backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
+				borderColor: window.chartColors.bacnet,
 				borderWidth: 1,
 				data: [
 					randomScalingFactor(),
@@ -43,9 +46,37 @@
 					randomScalingFactor()
 				]
 			}, {
-				label: 'Dataset 2',
-				backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
-				borderColor: window.chartColors.blue,
+				label: 'DNP3',
+				backgroundColor: color(window.chartColors.green).alpha(0.5).rgbString(),
+				borderColor: window.chartColors.dnp3,
+				borderWidth: 1,
+				data: [
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor()
+				]
+			}, {
+				label: 'MODBUS',
+				backgroundColor: color(window.chartColors.orange).alpha(0.5).rgbString(),
+				borderColor: window.chartColors.modbus,
+				borderWidth: 1,
+				data: [
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor()
+				]
+			}, {
+				label: 'PROFINET',
+				backgroundColor: color(window.chartColors.yellow).alpha(0.5).rgbString(),
+				borderColor: window.chartColors.profinet,
 				borderWidth: 1,
 				data: [
 					randomScalingFactor(),
@@ -72,8 +103,23 @@
 					},
 					title: {
 						display: true,
-						text: 'Chart.js Bar Chart'
-					}
+						text: 'Chart.js Grouped Bar Chart'
+					},
+					pan: {
+	      enabled: true,
+	      mode: "x",
+	      speed: 10,
+	      threshold: 10
+	    },
+	    zoom: {
+	      enabled: true,
+	      drag: false,
+	      mode: "x",
+	      limits: {
+	        max: 10,
+	        min: 0.5
+	      }
+	    }
 				}
 			});
 
